@@ -22,6 +22,7 @@ RUN rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/* && \
     a2enmod vhost_alias mpm_prefork deflate rewrite expires headers php5 && \
     a2ensite vhost.conf && \
     sed -i -e 's@^;sendmail_path =.*@sendmail_path = /usr/bin/msmtp -t -i@g' /etc/php5/apache2/php.ini /etc/php5/cli/php.ini && \
+    sed -i -e 's@short_open_tag =.*@short_open_tag = On@g' /etc/php5/apache2/php.ini /etc/php5/cli/php.ini && \
     mkdir -p /srv/www
 
 ADD entry.sh /
