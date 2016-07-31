@@ -1,7 +1,6 @@
 # Apache Mass Virtual Host
 
 [![Docker Repository on Quay.io](https://quay.io/repository/panubo/apache-mvh/status "Docker Repository on Quay.io")](https://quay.io/repository/panubo/apache-mvh)
-[![](https://badge.imagelayers.io/panubo/apache-mvh:latest.svg)](https://imagelayers.io/?images=panubo/apache-mvh:latest)
 
 Apache Mass Virtual Host for PHP and static HTML websites.
 
