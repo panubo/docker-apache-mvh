@@ -12,8 +12,8 @@ export MPM_MAXWORKERS=${MPM_MAXWORKERS:-150}
 export MPM_MAXCONNECTIONS=${MPM_CONNECTIONS:-0}
 
 # SMTP
-export SMTP_HOST=${SMTP_PORT_25_TCP_ADDR:-localhost}
-export SMTP_PORT=${SMTP_PORT_25_TCP_PORT:-25}
+export ${SMTP_HOST:=${SMTP_PORT_25_TCP_ADDR:-'localhost'}}
+export ${SMTP_PORT:=${SMTP_PORT_25_TCP_PORT:-25}}
 cat << EOF > /etc/msmtprc
 account default
 auto_from on

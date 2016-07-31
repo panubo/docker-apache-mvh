@@ -14,6 +14,11 @@ Apache Mass Virtual Host for PHP and static HTML websites.
 
 ## Environment variables
 
+SMTP Setting:
+
+- `SMTP_PORT`
+- `SMTP_HOST`
+
 Apache MPM Tuning:
 
 - `MPM_START` - Optional: Default '5'
