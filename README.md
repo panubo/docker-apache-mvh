@@ -7,8 +7,8 @@ Apache Mass Virtual Host for PHP and static HTML websites.
 ## Features
 
 - Uses [debian](https://hub.docker.com/_/debian/) base image
-- Thin Container. Uses linked [MariaDB](https://hub.docker.com/_/mariadb/) and [SMTP](https://hub.docker.com/r/panubo/postfix/) containers for those services
-- Mod PHP5 enabled 
+- Thin Container. Optionally uses linked [MariaDB](https://hub.docker.com/_/mariadb/) and [SMTP](https://hub.docker.com/r/panubo/postfix/) containers for those services.
+- Mod PHP5 enabled
 - Both "www" and "naked" domains are served from  from /srv/www/sitename`
 
 ## Environment variables
@@ -17,6 +17,8 @@ SMTP Setting:
 
 - `SMTP_PORT`
 - `SMTP_HOST`
+
+or `--link` your smtp container. msmtp is used for mail delivery. So PHP `mail()` function works without configuration changes.
 
 Apache MPM Tuning:
 
