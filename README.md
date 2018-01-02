@@ -20,6 +20,11 @@ SMTP Setting:
 
 or `--link` your smtp container. msmtp is used for mail delivery. So PHP `mail()` function works without configuration changes.
 
+Proxy helper:
+
+- `BEHIND_PROXY` - Default: False. Set to true to preload `ProxyHelper_prepend.php` which will register
+the remote IP and SSL status (when using compatible X- proxy headers).
+
 Apache MPM Tuning:
 
 - `MPM_START` - Optional: Default '5'

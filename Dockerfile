@@ -14,6 +14,8 @@ RUN apt-get update && \
     # Cleanup
     rm -rf /var/lib/apt/lists/*
 
+# Additional PHP preload scripts
+COPY *.php /usr/share/php/
 # Host Configuration
 COPY apache2.conf /etc/apache2/apache2.conf
 COPY mpm_prefork.conf /etc/apache2/mods-available/
