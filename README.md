@@ -1,7 +1,5 @@
 # Apache Mass Virtual Host
 
-[![Docker Repository on Quay.io](https://quay.io/repository/panubo/apache-mvh/status "Docker Repository on Quay.io")](https://quay.io/repository/panubo/apache-mvh)
-
 Apache Mass Virtual Host for PHP and static HTML websites.
 
 ## Features
@@ -9,7 +7,9 @@ Apache Mass Virtual Host for PHP and static HTML websites.
 - Uses [debian](https://hub.docker.com/_/debian/) base image
 - Thin Container. Optionally uses linked [MariaDB](https://hub.docker.com/_/mariadb/) and [SMTP](https://hub.docker.com/r/panubo/postfix/) containers for those services.
 - Mod PHP5 enabled
-- Both "www" and "naked" domains are served from  from /srv/www/sitename`
+- Both "www" and "naked" domains are served from files found at `/srv/www/sitename`
+- Mass virtual host. No additional configuration required to add additional domains. Just create the "sitename"
+directory and the contents will be automatically served.
 
 ## Environment variables
 
