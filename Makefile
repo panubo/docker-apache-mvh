@@ -1,4 +1,4 @@
-TAG      := jessie
+TAG      := stetch
 IMAGE    := panubo/apache-mvh
 REGISTRY := docker.io
 
