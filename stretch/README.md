@@ -35,5 +35,4 @@ Apache MPM Tuning:
 
 ## Status
 
-Jessie base is production ready.
 Stretch base in testing.

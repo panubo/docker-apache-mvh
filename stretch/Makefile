@@ -1,4 +1,4 @@
-TAG      := stetch
+TAG      := $(shell basename ${PWD})
 IMAGE    := panubo/apache-mvh
 REGISTRY := docker.io
 
