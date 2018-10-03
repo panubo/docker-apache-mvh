@@ -20,10 +20,12 @@ SMTP Setting:
 
 or `--link` your smtp container. `msmtp` is used for mail delivery. So PHP `mail()` function works without configuration changes.
 
-Proxy helper:
+Other:
 
-- `BEHIND_PROXY` - Default: False. Set to true to preload [`ProxyHelper_prepend.php`](https://github.com/panubo/php-extras/blob/master/SSLHelper_prepend.php) which will register
+- `BEHIND_PROXY` - Proxy helper: Default: False. Set to true to preload [`ProxyHelper_prepend.php`](https://github.com/panubo/php-extras/blob/master/SSLHelper_prepend.php) which will register
 the remote IP and SSL status (when using compatible X- proxy headers).
+- `PROCESS_MOUNTFILES` Default: False. Set to true to process Mountfiles
+- `REMOTE_BASE` Default: `/srv/remote` remote data mount for Mountfiles
 
 Apache MPM Tuning:
 
