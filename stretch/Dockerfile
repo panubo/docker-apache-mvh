@@ -10,7 +10,7 @@ RUN apt-get update \
   # Install Pear Requirements
   && pear install mail_mime mail_mimedecode net_smtp net_idna2-beta auth_sasl net_sieve crypt_gpg \
   # Cleanup
-  && rm -rf /var/lib/apt/lists/*
+  && rm -rf /var/lib/apt/lists/* /tmp/*
 
 # Install PHP Extras
 RUN cd /tmp \
