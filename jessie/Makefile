@@ -2,6 +2,8 @@ TAG      := $(shell basename ${PWD})
 IMAGE    := panubo/apache-mvh
 REGISTRY := docker.io
 
+.PHONY: build run shell push clean
+
 build:
 	docker build --pull -t $(IMAGE):$(TAG) .
 
@@ -14,3 +16,6 @@ shell:
 push:
 	docker tag $(IMAGE):$(TAG) $(REGISTRY)/$(IMAGE):$(TAG)
 	docker push $(REGISTRY)/$(IMAGE):$(TAG)
+
+clean:
+	docker rmi ${IMAGE_NAME}:${TAG}
