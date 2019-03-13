@@ -18,4 +18,4 @@ push:
 	docker push $(REGISTRY)/$(IMAGE):$(TAG)
 
 clean:
-	docker rmi ${IMAGE_NAME}:${TAG}
+	docker rmi ${IMAGE}:${TAG}
