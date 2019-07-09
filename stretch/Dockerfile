@@ -27,6 +27,8 @@ RUN rm /etc/apache2/conf-enabled/* /etc/apache2/sites-enabled/* \
   && a2ensite mvhost.conf \
   && sed -i -e 's@^;sendmail_path =.*@sendmail_path = /usr/bin/msmtp -t -i@g' /etc/php/7.0/apache2/php.ini /etc/php/7.0/cli/php.ini \
   && sed -i -e 's@short_open_tag =.*@short_open_tag = On@g' /etc/php/7.0/apache2/php.ini /etc/php/7.0/cli/php.ini \
+  && sed -i -e 's@post_max_size =.*@post_max_size = 32M@g' /etc/php/7.0/apache2/php.ini /etc/php/7.0/cli/php.ini \
+  && sed -i -e 's@upload_max_filesize =.*@upload_max_filesize = 32M@g' /etc/php/7.0/apache2/php.ini /etc/php/7.0/cli/php.ini \
   && mkdir -p /srv/www
 
 ADD entry.sh /
