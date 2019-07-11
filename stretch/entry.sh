@@ -33,8 +33,9 @@ run_mountfile() {
   # Mount all dirs specified in Mountfile
   local mountfile="${1:-"Mountfile"}"
   local data_dir="${2:-"/srv/remote"}"
-  local mount_uid="33"
-  local mount_gid="33"
+  local mount_uid="${MOUNTFILE_MOUNT_UID:-"48"}"
+  local mount_gid="${MOUNTFILE_MOUNT_GID:-"48"}"
+  local safety_checks="${MOUNTFILE_SAFETY_CHECKS:-"true"}"
   local source_dir=""
   local target_dir=""
   local working_dir=""
@@ -74,8 +75,10 @@ run_mountfile() {
       # normalise
       source_dir="$(cd "${data_dir}" && readlink -f -m "${s}")"
       # safety checks
-      [[ ! "${target_dir}" =~ ${working_dir} ]] && { echo "Error: Target outside working directory!" && return 129; }
-      [[ ! "${source_dir}" =~ ${data_dir} ]] && { echo "Error: Source not within data directory!" && return 129; }
+      if [[ "${safety_checks}" == "true" ]]; then
+        [[ ! "${target_dir}" =~ ${working_dir} ]] && { echo "Error: Target outside working directory!" && return 129; }
+        [[ ! "${source_dir}" =~ ${data_dir} ]] && { echo "Error: Source not within data directory!" && return 129; }
+      fi
     fi
 
     # make remote source dir if not exist
@@ -108,6 +111,8 @@ run_mountfile() {
 
 if [ "${PROCESS_MOUNTFILES}" == "true" ]; then
   : "${REMOTE_BASE:=/srv/remote}"
+  : "${MOUNTFILE_MOUNT_UID:=33}"
+  : "${MOUNTFILE_MOUNT_GID:=33}"
   MOUNTFILES=$(find /srv/www -maxdepth 2 -mindepth 2 -type f -name 'Mountfile')
   for MOUNTFILE in ${MOUNTFILES}; do
     SITE="$(basename $(dirname $MOUNTFILE))"
