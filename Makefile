@@ -1,4 +1,4 @@
-SUBDIRS := stretch jessie
+SUBDIRS := buster stretch jessie
 
 .PHONY: build push clean
 
