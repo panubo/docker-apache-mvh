@@ -2,6 +2,9 @@ FROM debian:stretch
 
 EXPOSE 80
 
+# updated to match debian www-user
+ENV MOUNTFILE_MOUNT_UID=33 MOUNTFILE_MOUNT_GID=33
+
 # Install Requirements
 RUN apt-get update \
   && apt-get install -y ca-certificates msmtp \
