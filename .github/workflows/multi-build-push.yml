@@ -17,7 +17,7 @@ jobs:
   build_and_push:
     strategy:
       matrix:
-        version: ["buster"]
+        version: ["buster", "bullseye"]
 
     runs-on: ubuntu-latest
     steps:

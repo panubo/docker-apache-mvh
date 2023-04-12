@@ -1,4 +1,4 @@
-SUBDIRS := buster
+SUBDIRS := buster bullseye
 
 .PHONY: build push clean
 
