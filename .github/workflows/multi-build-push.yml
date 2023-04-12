@@ -84,7 +84,7 @@ jobs:
           cd ${{ matrix.version }}
           delimiter="$(openssl rand -hex 8)"
           echo "image_version<<${delimiter}" >> "${GITHUB_OUTPUT}"
-          make _ci_version TAG=test >> "${GITHUB_OUTPUT}"
+          make _ci_version >> "${GITHUB_OUTPUT}"
           echo "${delimiter}" >> "${GITHUB_OUTPUT}"
 
       - name: Docker meta
@@ -113,6 +113,6 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: linux/amd64 # ,linux/arm64 # ARM builds are not supported, pglogical do not ship arm64 packages
+          platforms: linux/amd64,linux/arm64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
