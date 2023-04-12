@@ -1,6 +1,6 @@
 TAG      := $(shell basename ${PWD})
 IMAGE    := panubo/apache-mvh
-REGISTRY := docker.io
+REGISTRY := quay.io
 
 .PHONY: build run shell push clean
 
@@ -19,3 +19,9 @@ push:
 
 clean:
 	docker rmi ${IMAGE}:${TAG}
+
+_ci_test:
+	true
+
+_ci_version:
+	@echo $(TAG)
