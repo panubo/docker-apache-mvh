@@ -1,4 +1,5 @@
 TAG      := $(shell basename ${PWD})
+CODENAME := bullseye
 IMAGE    := panubo/apache-mvh
 REGISTRY := quay.io
 
@@ -25,3 +26,4 @@ _ci_test:
 
 _ci_version:
 	@echo $(TAG)
+	@echo $(CODENAME)

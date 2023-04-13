@@ -1,4 +1,4 @@
-SUBDIRS := buster bullseye
+SUBDIRS := debian11 debian10
 
 .PHONY: build push clean
 
