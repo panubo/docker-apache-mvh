@@ -6,7 +6,7 @@ Apache Mass Virtual Host for PHP and static HTML websites.
 
 - Uses [Debian](https://hub.docker.com/_/debian/) base image
 - Thin Container. Optionally uses linked [MariaDB](https://hub.docker.com/_/mariadb/) and [SMTP](https://hub.docker.com/r/panubo/postfix/) containers for those services.
-- Mod PHP7.3 enabled
+- Mod PHP 7.3 enabled
 - Both "www" and "naked" domains are served from files found at `/srv/www/sitename`
 - Mass virtual host. No additional configuration required to add additional domains. Just create the "sitename"
 directory and the contents will be automatically served for the "sitename" domain.
@@ -37,4 +37,4 @@ Apache MPM Tuning:
 
 ## Status
 
-Buster base in testing.
+Stable.
